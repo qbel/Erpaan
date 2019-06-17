@@ -447,7 +447,7 @@ figure{
 .title-text{
   position: relative;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   color: #ff0000;
   text-transform: capitalize;
   padding-left: 111px;
@@ -617,7 +617,7 @@ figure{
 .main-menu .navigation > li{
   position:relative;
   float:left;
-  margin-right: 42px;
+  margin-right: 40px;
 }
 .main-header .menu-column{
   padding: 0px;
@@ -632,7 +632,7 @@ figure{
   font-weight:400;
   opacity:1;
   text-transform:capitalize;
-  padding: 17px 18px 19px 0px;
+  padding: 15px 16px 17px 0px;
   letter-spacing: 1px;
   transition:all 500ms ease;
   -moz-transition:all 500ms ease;
@@ -2079,11 +2079,11 @@ figure{
 
 .about-style-six{
   position: relative;
-  padding: 120px 0px 146px 0px;
+  padding: 120px 0px 10px 0px;
 }
 .about-style-six .about-content .text p{
   line-height: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .about-style-six .about-content .text{
   padding-bottom: 13px;
@@ -4333,3 +4333,16 @@ figure{
   color: #ff0000;
 }
 
+.responsive-map{
+  overflow: hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  }
+  .responsive-map iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+  }
