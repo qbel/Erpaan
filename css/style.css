@@ -648,6 +648,16 @@ figure{
 }
 
 
+.mainmenu .dropdown-submenu {
+  position: relative;
+}
+
+.mainmenu .dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
 .main-menu .navigation > li > ul{
   position:absolute;
   left:0px;
@@ -715,6 +725,7 @@ figure{
   z-index:5;
   transition: all 500ms ease;
 }
+
 .navbar-header {
   display: none;
 }
@@ -4346,3 +4357,4 @@ figure{
   width:100%;
   position:absolute;
   }
+  
