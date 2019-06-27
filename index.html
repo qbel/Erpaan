@@ -8,8 +8,10 @@
 <title>ERPAAN | Emerging Researchers & Professionals in Ageing African Network</title>
 
 <!-- Stylesheets -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link href="css/style.css" rel="stylesheet">
 <link href="css/responsive.css" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <!-- <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
 
 </head>
@@ -54,12 +56,25 @@
                                             <li><a href="research.html">Research</a></li>
                                             <li><a href="articles.html">Publications</a></li>
                                             <li><a href="events.html">Conferences</a></li>
-                                            <li><a href="#">Resources</a>
-                                                <!-- <ul>
+                                            <!-- <li class="dropdown"><a href="#">Resources</a>
+                                                <ul>
                                                     <li><a href="#">Outcome measures for older adults</a></li>
                                                     <li><a href="#">Clinical guidelines.</a></li>
-                                                </ul> -->
-                                            </li> 
+                                                </ul>
+                                            </li>  -->
+                                            <li class="drop">
+                                                <a href="#" class="drop-toggle" data-toggle="drop" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+                                                <ul class="drop-menu">
+                                                    <!-- <li><a href="#">Action</a></li> -->
+                                                    <li><a class="trigger right-caret">Resources</a>
+                                                        <ul class="drop-menu sub-menu" style="background-color:#ff0000">
+                                                            <li><a href="#">Outcome Measures</a></li>
+                                                            <li><a href="#">Clinical Guidelines</a></li>
+                                                            <li><a href="mobility outcome.html">Mobility Outcome</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </li> 
                                     
@@ -76,7 +91,52 @@
                             </div>
                         </nav>
                     </div>
-                    <div class="nav-link"><a href="#" class="theme-btn-three">Submit Research</a></div>
+                    <div class="nav-link"><a class="theme-btn-three" onclick="document.getElementById('id01').style.display='block'">Submit Research</a>
+                        <div class="w3-container">
+                            <!-- <h2>W3.CSS Modal</h2> -->
+                            <!-- <p>In this example we demonstrate how to close the modal by clicking outside of the modal box.</p> -->
+                            
+                            <!-- <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Open Modal</button> -->
+                            
+                            <div id="id01" class="w3-modal">
+                                <div class="w3-modal-content w3-card-4 w3-animate-top">
+                                    <header class="w3-container w3-red"> 
+                                        <span onclick="document.getElementById('id01').style.display='none'" 
+                                        class="w3-button w3-display-topright">&times;</span>
+                                        <h2 style="color:#fff; text-align:center;padding:5px">SUBMIT RESEARCH</h2>
+                                    </header>
+                                    <div class="row">
+                                        <div class="col-lg-2"></div>
+                                        <div class="col-lg-8" style="text-align:left">
+                                            <form class="w3-container" action="">
+                                                <div class="w3-section">
+                                                    <label><b>Name</b></label>
+                                                    <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Name" name="" required>
+                                                    <label><b>Research Type</b></label>
+                                                    <input class="w3-input w3-border w3-margin-bottom" type="password" placeholder="Enter Research Type" name="" required>
+                                                    <div >
+                                                        <label for="image_file" class="w3-margin-bottom"><b>Please select image file</b></label>
+                                                        <input type="file" name="" id="image_file" onchange="fileSelected();" />
+                                                    </div>
+                                                    <label><b>Short Description</b></label>
+                                                    <textarea class="w3-input w3-border w3-margin-bottom" placeholder="Enter Short Description" name="">
+                                                    </textarea>
+                                                    <label><b>Comment</b></label>
+                                                    <textarea class="w3-input w3-border w3-margin-bottom" placeholder="Enter Comment" name="">
+                                                    </textarea>
+                                                    <button class="w3-button w3-block w3-red w3-section w3-padding" type="submit">Submit</button>
+                                                    <!-- <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me -->
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="col-lg-2"></div>
+                                    </div>
+                                    
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div><!-- header-bottom end -->
@@ -711,7 +771,8 @@
         </div>
     </section>
     <!-- brand-section end -->
-
+    
+          
 
     <!-- main-footer -->
     <footer class="main-footer">
@@ -817,6 +878,34 @@
 
 <!-- main-js -->
 <script src="js/script.js"></script>
+<script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
 
+        $(function(){
+    $(".drop-menu > li > a.trigger").on("click",function(e){
+        var current=$(this).next();
+        var grandparent=$(this).parent().parent();
+        if($(this).hasClass('left-caret')||$(this).hasClass('right-caret'))
+            $(this).toggleClass('right-caret left-caret');
+        grandparent.find('.left-caret').not(this).toggleClass('right-caret left-caret');
+        grandparent.find(".sub-menu:visible").not(current).hide();
+        current.toggle();
+        e.stopPropagation();
+    });
+    $(".drop-menu > li > a:not(.trigger)").on("click",function(){
+        var root=$(this).closest('.drop');
+        root.find('.left-caret').toggleClass('right-caret left-caret');
+        root.find('.sub-menu:visible').hide();
+    });
+});
+        </script>
 </body><!-- End of .page_wrapper -->
 </html>
