@@ -95,7 +95,8 @@
 
 body {
   font-size:15px;
-  color:#848484;
+  /* color:#848484; */
+  color:black;
   line-height:26px;
   font-weight:400;
   background:#ffffff;
@@ -180,11 +181,12 @@ textarea:focus{
 
 p{
   position: relative;
-  font-size: 15px;
+  font-size: 16px;
   font-family: 'Open Sans', sans-serif;
   line-height: 26px;
   font-weight: 400;
-  color: #848484;
+  color:black;
+  /* color: #848484; */
   margin-bottom: 10px;
   font-style: normal;
   transition: all 500ms ease;
@@ -446,7 +448,7 @@ figure{
 }
 .title-text{
   position: relative;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
   color: #ff0000;
   text-transform: capitalize;
